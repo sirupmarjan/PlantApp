@@ -21,6 +21,7 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.ViewHolder> 
     public PlantAdapter(Context context, List<Plants>datalist){
         this.datalist = datalist;
         this.context = context;
+
     }
 
     @NonNull

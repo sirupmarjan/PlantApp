@@ -24,7 +24,8 @@ public class AddAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-
+        getSupportActionBar().hide();
+        
         et_judul = findViewById(R.id.et_judul);
         et_deskripsi = findViewById(R.id.et_deskripsi);
         fab_save = findViewById(R.id.fab_save);
