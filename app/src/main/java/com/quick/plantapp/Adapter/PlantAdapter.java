@@ -50,7 +50,7 @@ public class PlantAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setTransfer(datalist.get(position).getJudul(), datalist.get(position).getDeskripsi());
+                setTransfer(datalist.get(position).getJudul(), datalist.get(position).getDeskripsi(),datalist.get(position).getId());
             }
         });
     }
@@ -62,10 +62,11 @@ public class PlantAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         deskripsi.setText(text);
     }
 
-    public void setTransfer(String judul, String desc){
+    public void setTransfer(String judul, String desc, int id){
         Log.d(TAG, judul);
         Log.d(TAG, desc);
         Intent i = new Intent(context, ViewAct.class);
+        i.putExtra("id", id);
         i.putExtra("judul", judul);
         i.putExtra("desc", desc);
         context.startActivity(i);
