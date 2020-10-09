@@ -12,7 +12,11 @@ import java.util.List;
 public interface PlantsDao {
     @Query("SELECT * FROM plants")
     List<Plants> getAll();
+
     @Insert
     void insertAll(Plants plants);
+
+    @Update
+    void update(Plants plants);
 
 }

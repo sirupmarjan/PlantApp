@@ -12,10 +12,11 @@
       android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginBottom="25dp"
         >
 
       <TextView
@@ -43,9 +44,10 @@
         app:backgroundTint="@color/colorAccent"
         app:fabAlignmentMode="center"
         app:fabAttached="true"
-        android:padding="15dp"
+        android:padding="20dp"
         app:fabCradleDiameter="70dp"
         app:navigationIcon="@drawable/ic_baseline_favorite_24"
+        app:hideOnScroll="true"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
@@ -54,7 +56,12 @@
         android:src="@drawable/ic_baseline_add_24"
         android:clickable="true"
         app:layout_anchor="@id/bottomAppBar"
-        android:focusable="true" />
+        android:focusable="true"
+        android:elevation="18dp"
+        app:rippleColor="@color/colorAccent"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:outlineSpotShadowColor="@color/colorAccent"
+        />
 
 
 

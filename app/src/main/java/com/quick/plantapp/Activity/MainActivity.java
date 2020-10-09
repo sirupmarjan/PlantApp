@@ -20,6 +20,8 @@ import com.quick.plantapp.Room.Plants;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 import static com.quick.plantapp.Room.MyApp.db;
 
 public class MainActivity extends AppCompatActivity {
@@ -71,5 +73,26 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new PlantAdapter(this, datalist);
 
         rv_list.setAdapter(mAdapter);
+    }
+
+    public void onBackPressed(){
+        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                .setTitleText("Exit App?")
+                .setConfirmText("Yes")
+                .setCancelText("No")
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        finish();
+                    }
+                })
+                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.cancel();
+                    }
+                })
+                .show();
+
     }
 }
