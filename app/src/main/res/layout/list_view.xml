@@ -6,21 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="5dp"
-    android:paddingLeft="20dp"
+    android:paddingStart="20dp"
     android:paddingBottom="10dp"
-    android:paddingRight="5dp"
+    android:paddingEnd="20dp"
     >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardElevation="18dp"
+        app:cardCornerRadius="8dp"
         >
         <LinearLayout
+        android:id="@+id/ll_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+            android:background="@color/colorPrimaryDark">
+        <ImageView
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_ac_unit_24"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:background="@color/white">
             <TextView
                 android:id="@+id/tv_judul"
                 android:textColor="#1B1B1B"
@@ -39,5 +53,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="2"/>
         </LinearLayout>
+    </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
