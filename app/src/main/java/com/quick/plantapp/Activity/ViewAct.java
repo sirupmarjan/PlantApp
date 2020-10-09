@@ -61,6 +61,7 @@ public class ViewAct extends AppCompatActivity {
                 i.putExtra("judul", judul);
                 i.putExtra("desc", desc);
                 startActivity(i);
+                finish();
             }
         });
     }
