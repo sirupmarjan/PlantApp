@@ -4,27 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.AddAct">
+    tools:context=".Activity.AddAct"
+    android:background="@color/colorPrimary">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_add"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="25dp">
-            <EditText
-                android:id="@+id/et_judul"
-                tools:text="ini judull"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <com.google.android.material.textfield.TextInputEditText
-                tools:text ="ini deskripsi"
+            android:padding="25dp"
+            app:layout_anchor="@+id/linearLayout"
+            app:layout_anchorGravity="center">
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.AppCompat.EditText"
-                />
+                android:background="@color/white"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_judul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    tools:text="ini judull"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_deskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:lines="10"
+                    tools:text="ini deskripsi"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
@@ -39,10 +69,11 @@
             />
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_save"
+            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_save_24"
             app:layout_anchor="@id/bottomAppBar"
-            />
+            android:focusable="true" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
