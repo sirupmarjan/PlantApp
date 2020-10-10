@@ -27,6 +27,7 @@ public class EditAct extends AppCompatActivity {
         eDesc = findViewById(R.id.et_eDeskripsi);
         fab_saveEdit = findViewById(R.id.fab_saveEdit);
 
+
         Intent i = getIntent();
         int id = i.getIntExtra("id", 0);
         String judul = i.getStringExtra("judul");
@@ -59,4 +60,5 @@ public class EditAct extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "gagal", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

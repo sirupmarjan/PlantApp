@@ -19,4 +19,6 @@ public interface PlantsDao {
     @Update
     void update(Plants plants);
 
+    @Delete
+    void  delete(Plants id);
 }

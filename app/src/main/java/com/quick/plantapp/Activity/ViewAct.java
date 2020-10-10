@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.quick.plantapp.Adapter.PlantAdapter;
@@ -21,7 +22,7 @@ import static com.quick.plantapp.Room.MyApp.db;
 
 public class ViewAct extends AppCompatActivity {
     TextView vJudul, vDesc;
-    FloatingActionButton fab_Edit;
+    FloatingActionButton fab_Edit, fab_delete;
     Plants plants;
 
     @Override
@@ -36,13 +37,14 @@ public class ViewAct extends AppCompatActivity {
         vJudul = findViewById(R.id.tv_vJudul);
         vDesc = findViewById(R.id.tv_vDesc);
         fab_Edit = findViewById(R.id.fab_edit);
+        fab_delete = findViewById(R.id.fab_delete);
 
         Intent i = getIntent();
         int id = i.getIntExtra("id", 0);
         String judul = i.getStringExtra("judul");
         String desc = i.getStringExtra("desc");
         fetchData(id, judul, desc);
-       ;
+        onDelete(id, judul, desc);
     }
 
     private void fetchData(int id, String judul, String desc) {
@@ -61,6 +63,20 @@ public class ViewAct extends AppCompatActivity {
                 i.putExtra("judul", judul);
                 i.putExtra("desc", desc);
                 startActivity(i);
+                finish();
+            }
+        });
+    }
+
+    private void onDelete(final int id, String judul, String desc) {
+        plants = new Plants();
+        plants.setId(id);
+        fab_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.plantsDao().delete(plants);
+                Toast.makeText(getApplicationContext(), "Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
         });
