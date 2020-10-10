@@ -22,6 +22,7 @@ public class EditAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+        getSupportActionBar().hide();
 
         eJudul = findViewById(R.id.et_eJudul);
         eDesc = findViewById(R.id.et_eDeskripsi);

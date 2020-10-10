@@ -1,15 +1,20 @@
 package com.quick.plantapp.Activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.quick.plantapp.Adapter.PlantAdapter;
@@ -75,29 +80,50 @@ public class MainActivity extends AppCompatActivity {
         rv_list.setAdapter(mAdapter);
     }
 
-    public void onBackPressed(){
-        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                .setTitleText("Exit App?")
-                .setConfirmText("Yes")
-                .setCancelText("No")
-                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-//                        moveTaskToBack(true);
-//                        android.os.Process.killProcess(android.os.Process.myPid());
-//                        System.exit(1);
-                        finishAffinity();
-                        finish();
+    public void onBackPressed() {
+//        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+//                .setTitleText("Exit App?")
+//                .setConfirmText("Yes")
+//                .setCancelText("No")
+//                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+//                    @Override
+//                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+////                        moveTaskToBack(true);
+////                        android.os.Process.killProcess(android.os.Process.myPid());
+////                        System.exit(1);
+//                        finishAffinity();
+//                        finish();
+//
+//                    }
+//                })
+//                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+//                    @Override
+//                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+//                        sweetAlertDialog.cancel();
+//                    }
+//                })
+//                .show();
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View v = inflater.inflate(R.layout.dialog_close, null);
+        Button btnYes = v.findViewById(R.id.btn_yes);
+        Button btnNo = v.findViewById(R.id.btn_no);
+        final AlertDialog builder = new AlertDialog.Builder(this).create();
+        builder.setView(v);
+        builder.show();
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAffinity();
+                finish();
+            }
+        });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.dismiss();
+            }
+        });
 
-                    }
-                })
-                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        sweetAlertDialog.cancel();
-                    }
-                })
-                .show();
 
     }
 }

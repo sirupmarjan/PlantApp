@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_app_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.EditAct"></activity>
+        <activity android:name=".Activity.EditAct" />
         <activity android:name=".Activity.ViewAct" />
         <activity android:name=".Activity.AddAct" />
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.SplashAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
