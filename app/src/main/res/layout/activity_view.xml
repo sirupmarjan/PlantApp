@@ -12,12 +12,15 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardedit"
             android:layout_marginTop="100dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:cardCornerRadius="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            >
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"/>
             <LinearLayout
                 android:padding="15dp"
                 android:layout_width="match_parent"
@@ -40,6 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="20dp"/>
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -47,9 +51,26 @@
             android:id="@+id/fab_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:focusable="true"
             android:src="@drawable/ic_baseline_create_24"
             app:layout_anchor="@+id/cardedit"
-            app:layout_anchorGravity="bottom|center"
-            android:focusable="true"/>
+            app:borderWidth="0dp"
+            app:layout_anchorGravity="bottom|center" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/white"
+            android:focusable="true"
+            android:outlineSpotShadowColor="@color/white"
+            android:outlineAmbientShadowColor="@color/white"
+            android:src="@drawable/ic_baseline_delete_24"
+            app:borderWidth="0dp"
+            app:layout_anchor="@+id/cardedit"
+            app:layout_anchorGravity="end|center" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv_list.setLayoutManager(linearLayoutManager);
         mAdapter = new PlantAdapter(this, datalist);
-
         rv_list.setAdapter(mAdapter);
     }
 
@@ -87,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
 //                        moveTaskToBack(true);
 //                        android.os.Process.killProcess(android.os.Process.myPid());
 //                        System.exit(1);
+                        finishAffinity();
                         finish();
+
                     }
                 })
                 .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
