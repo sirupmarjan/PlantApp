@@ -20,6 +20,7 @@ import com.quick.plantapp.Room.Plants;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.Constants;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 import static com.quick.plantapp.Room.MyApp.db;
@@ -83,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sweetAlertDialog) {
+//                        moveTaskToBack(true);
+//                        android.os.Process.killProcess(android.os.Process.myPid());
+//                        System.exit(1);
                         finish();
                     }
                 })

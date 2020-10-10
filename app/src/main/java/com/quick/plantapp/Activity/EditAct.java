@@ -54,7 +54,7 @@ public class EditAct extends AppCompatActivity {
             plants.setDeskripsi(eDesc.getText().toString());
 
             db.plantsDao().update(plants);
-            startActivity(new Intent(EditAct.this, MainActivity.class));
+            finish();
         }else{
             Toast.makeText(getApplicationContext(), "gagal", Toast.LENGTH_SHORT).show();
         }
